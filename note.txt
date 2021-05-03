@@ -1,0 +1,13 @@
+#解压
+tar -xvzf helm-v3.3.0-linux-amd64.tar.gz
+#移至系统环境
+mv linux-amd64/helm /usr/local/bin/helm
+#测试
+helm version
+#添加公用仓库
+helm repo add stable http://mirror.azure.cn/kubernetes/charts
+helm repo add aliyun https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts 
+helm repo add kubernetes-stable https://kubernetes-charts.storage.googleapis.com
+helm repo add kubernetes-incubator https://kubernetes-charts-incubator.storage.googleapis.com
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
